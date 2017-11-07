@@ -412,3 +412,7 @@ set timeout timeoutlen=1500
 
 set autochdir
 let NERDTreeChDirMode=2
+
+
+" enable mouse support
+set mouse=a
