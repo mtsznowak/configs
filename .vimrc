@@ -132,6 +132,8 @@ map <C-b> :NERDTreeTabsToggle<CR>
 " toggle line numbers in hybrid mode
 map <C-n> :set invnumber invrelativenumber<CR>
 
+"toggle gitgutter
+map <C-m> :GitGutterToggle<CR>
 
 colorscheme ambient
 set background=dark

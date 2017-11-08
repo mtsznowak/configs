@@ -10,3 +10,4 @@ git clone https://github.com/jistr/vim-nerdtree-tabs.git
 git clone https://github.com/vim-scripts/Ambient-Color-Scheme.git
 git clone https://github.com/slashmili/alchemist.vim.git
 git clone https://github.com/scrooloose/nerdtree.git
+git clone https://github.com/airblade/vim-gitgutter.git
