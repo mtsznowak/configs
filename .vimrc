@@ -407,6 +407,8 @@ function! <SID>BufcloseCloseIt()
 endfunction
 
 
+" disable folding
+set nofoldenable
 
 " Nerd commenter -  set leader for nerdcommenter and it's timeout
 let mapleader=","

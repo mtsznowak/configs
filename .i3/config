@@ -167,6 +167,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+bindsym $mod+Escape exec i3lock -c 000000
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -185,7 +187,7 @@ bar {
 #exec i3-config-wizard
 exec feh --bg-scale /home/daisy/Obrazy/Hackintosh_Wallpaper_v4_by_Jonzy.png
 exec --no-startup-id nm-applet
-
+exec --no-startup-id twmnd
 
 # Hangouts
 for_window [title="Hangouts"] move container to workspace 4
