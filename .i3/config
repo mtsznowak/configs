@@ -264,5 +264,6 @@ mode "moveit" {
     bindsym Down move down 20px
     bindsym Right move right 20px
     bindsym $mod+m mode "default"
+    bindsym Escape mode "default"
 }
 bindsym $mod+m focus floating; mode "moveit"
