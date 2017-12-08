@@ -62,12 +62,6 @@ let g:mapleader = ","
 nmap <leader>w :w!<cr>
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => VIM user interface
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set 7 lines to the cursor - when moving vertically using j/k
-set so=7
-
 " Turn on the WiLd menu
 set wildmenu
 
@@ -134,6 +128,13 @@ map <C-n> :set invnumber invrelativenumber<CR>
 
 "toggle gitgutter
 map <C-m> :GitGutterToggle<CR>
+
+
+"toggle syntastic
+map <C-g> :SyntasticToggleMode<CR>
+
+"search for visually selected text
+vnoremap // y/<C-R>"<CR>
 
 colorscheme ambient
 set background=dark
