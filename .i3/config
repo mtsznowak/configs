@@ -259,3 +259,13 @@ mode "mode_idea" {
   bindsym Mod4+Shift+9 move container to workspace 9
   bindsym Mod4+Shift+0 move container to workspace 10
 }
+
+mode "moveit" {
+    bindsym Up move up 20px
+    bindsym Left move left 20px
+    bindsym Down move down 20px
+    bindsym Right move right 20px
+    bindsym $mod+m mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+m focus floating; mode "moveit"

@@ -12,3 +12,4 @@ git clone https://github.com/slashmili/alchemist.vim.git
 git clone https://github.com/scrooloose/nerdtree.git
 git clone https://github.com/airblade/vim-gitgutter.git
 git clone https://github.com/vim-syntastic/syntastic.git
+git clone https://github.com/milkypostman/vim-togglelist.git
