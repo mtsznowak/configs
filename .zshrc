@@ -8,7 +8,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # Example aliases
-alias zshconfig="subl ~/.zshrc"
+alias zshconfig="vim ~/.zshrc"
 alias gst="git status "
 alias glg="git log "
 alias pin="ping 8.8.8.8 "
@@ -17,6 +17,7 @@ alias gc="git commit -am "
 alias kurwa='sudo $(fc -ln -1)'
 alias pls='sudo $(fc -ln -1)'
 alias diffd='git difftool -d '
+alias gitree='git log --graph --oneline --all'
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 

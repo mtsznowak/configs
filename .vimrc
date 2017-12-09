@@ -135,6 +135,8 @@ map <C-n> :set invnumber invrelativenumber<CR>
 "toggle gitgutter
 map <C-m> :GitGutterToggle<CR>
 
+map <F2> :!zsh<CR>
+
 colorscheme ambient
 set background=dark
 
