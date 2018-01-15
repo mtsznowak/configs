@@ -41,6 +41,43 @@
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Load plugins with Vundle
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.config/nvim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'elixir-editors/vim-elixir'
+Plugin 'tpope/vim-sleuth'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'vim-scripts/Ambient-Color-Scheme'
+Plugin 'slashmili/alchemist.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'milkypostman/vim-togglelist'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-session'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
+
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
@@ -117,9 +154,6 @@ set tm=500
 " Enable syntax highlighting
 syntax enable
 
-" load pathogen 
-execute pathogen#infect()
-
 " open NERDTree with Ctrl+n
 map <C-b> :NERDTreeTabsToggle<CR>
 
@@ -127,7 +161,7 @@ map <C-b> :NERDTreeTabsToggle<CR>
 map <C-n> :set invnumber invrelativenumber<CR>
 
 "toggle gitgutter
-map <C-m> :GitGutterToggle<CR>
+"map <C-m> :GitGutterToggle<CR>
 
 map <F2> :!zsh<CR>
 
@@ -287,6 +321,9 @@ func! DeleteTrailingWS()
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
+autocmd BufWrite *.c :call DeleteTrailingWS()
+autocmd BufWrite *.cpp :call DeleteTrailingWS()
+autocmd BufWrite *.ex :call DeleteTrailingWS()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
