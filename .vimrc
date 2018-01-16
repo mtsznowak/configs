@@ -67,6 +67,10 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'milkypostman/vim-togglelist'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
+Plugin 'junegunn/fzf.vim'
+Plugin 'junegunn/fzf'
+Plugin 'mkitt/tabline.vim'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -463,6 +467,26 @@ set mouse=a
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+
+" fzf config
+
+map <C-p> :FZF<CR>
+
+" So that we also search through hidden files
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
+
+" describes how to open files from fzf
+command! -nargs=1 CopyPath let @+ = <q-args>
+let g:fzf_action = {
+  \ 'enter': 'tab drop',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-c': 'CopyPath',
+  \ 'ctrl-v': 'vsplit' }
+
+" Make ESC always quit the fzf prompt and not just enter normal mode
+autocmd! FileType fzf tnoremap <buffer> <Esc> <c-q>
+
 
 " Syntastic setup
 let g:syntastic_always_populate_loc_list = 1
