@@ -70,7 +70,9 @@ Plugin 'xolox/vim-session'
 Plugin 'junegunn/fzf.vim'
 Plugin 'junegunn/fzf'
 Plugin 'mkitt/tabline.vim'
-
+Plugin 'machakann/vim-highlightedyank'
+Plugin 'prettier/vim-prettier'
+Plugin 'easymotion/vim-easymotion'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -98,6 +100,13 @@ set autoread
 " like <leader>w saves the current file
 let mapleader = ","
 let g:mapleader = ","
+
+":s replace preview
+set inccommand=nosplit
+
+"fast copy/paste from system clibboard
+nmap <S-p> "+p
+vmap <S-y> "+y
 
 " Fast saving
 nmap <leader>w :w!<cr>
@@ -171,6 +180,7 @@ map <F2> :!zsh<CR>
 
 "toggle syntastic
 map <C-g> :SyntasticToggleMode<CR>
+noremap <leader>g :SyntasticReset<CR>
 
 "search for visually selected text
 vnoremap // y/<C-R>"<CR>
@@ -331,38 +341,6 @@ autocmd BufWrite *.ex :call DeleteTrailingWS()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vimgrep searching and cope displaying
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" When you press gv you vimgrep after the selected text
-vnoremap <silent> gv :call VisualSelection('gv')<CR>
-
-" Open vimgrep and put the cursor in the right position
-map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
-
-" Vimgreps in the current file
-map <leader><space> :vimgrep // <C-R>%<C-A><right><right><right><right><right><right><right><right><right>
-
-" When you press <leader>r you can search and replace the selected text
-vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
-
-" Do :help cope if you are unsure what cope is. It's super useful!
-"
-" When you search with vimgrep, display your results in cope by doing:
-"   <leader>cc
-"
-" To go to the next search result do:
-"   <leader>n
-"
-" To go to the previous search results do:
-"   <leader>p
-"
-map <leader>cc :botright cope<cr>
-map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
-map <leader>n :cn<cr>
-map <leader>p :cp<cr>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell checking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pressing ,ss will toggle and untoggle spell checking
@@ -461,17 +439,20 @@ set timeout timeoutlen=1500
 " enable mouse support
 set mouse=a
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-
 " fzf config
 
-map <C-p> :FZF<CR>
+nnoremap <silent> <C-p> :FZF<CR>
 
 " So that we also search through hidden files
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
+
+" search for file content
+command! -bang FLines call fzf#vim#grep(
+     \ 'grep -vnITr --color=always --exclude-dir=".svn" --exclude-dir=".git" --exclude=tags --exclude=*\.pyc --exclude=*\.exe --exclude=*\.dll --exclude=*\.zip --exclude=*\.gz "^$"', 
+     \ 0,  
+     \ {'options': '--reverse --prompt "FLines> "'})
+
+nnoremap <silent> <leader>p :FLines<cr>
 
 " describes how to open files from fzf
 command! -nargs=1 CopyPath let @+ = <q-args>
@@ -484,9 +465,18 @@ let g:fzf_action = {
 " Make ESC always quit the fzf prompt and not just enter normal mode
 autocmd! FileType fzf tnoremap <buffer> <Esc> <c-q>
 
+" vim session setup
+let g:session_autosave = 'no'
 
 " Syntastic setup
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers=['eslint']
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+" Prettier config [JS]
+source ~/.config/nvim/prettier.vim
