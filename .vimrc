@@ -446,13 +446,9 @@ nnoremap <silent> <C-p> :FZF<CR>
 " So that we also search through hidden files
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 
-" search for file content
-command! -bang FLines call fzf#vim#grep(
-     \ 'grep -vnITr --color=always --exclude-dir=".svn" --exclude-dir=".git" --exclude=tags --exclude=*\.pyc --exclude=*\.exe --exclude=*\.dll --exclude=*\.zip --exclude=*\.gz "^$"', 
-     \ 0,  
-     \ {'options': '--reverse --prompt "FLines> "'})
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
-nnoremap <silent> <leader>p :FLines<cr>
+nnoremap <silent> <leader>p :Ag<cr>
 
 " describes how to open files from fzf
 command! -nargs=1 CopyPath let @+ = <q-args>
