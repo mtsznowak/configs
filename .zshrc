@@ -17,6 +17,7 @@ alias gc="git commit -am "
 alias kurwa='sudo $(fc -ln -1)'
 alias pls='sudo $(fc -ln -1)'
 alias diffd='git difftool -d '
+alias diffs='git diff --word-diff=color '
 alias gitree='git log --graph --oneline --all'
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
