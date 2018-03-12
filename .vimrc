@@ -73,6 +73,7 @@ Plugin 'mkitt/tabline.vim'
 Plugin 'machakann/vim-highlightedyank'
 Plugin 'prettier/vim-prettier'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'keith/swift.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -107,6 +108,9 @@ set inccommand=nosplit
 "fast copy/paste from system clibboard
 nmap <S-p> "+p
 vmap <S-y> "+y
+vmap <S-d> "+d
+nmap <S-d> "+dd
+nmap <S-y> "+yy
 
 " Fast saving
 nmap <leader>w :w!<cr>
@@ -175,6 +179,7 @@ map <C-n> :set invnumber invrelativenumber<CR>
 
 "toggle gitgutter
 "map <C-m> :GitGutterToggle<CR>
+set updatetime=500
 
 map <F2> :!zsh<CR>
 
@@ -235,6 +240,13 @@ set wrap "Wrap lines
 
 
 """"""""""""""""""""""""""""""
+" => Terminal mode related
+""""""""""""""""""""""""""""""
+" exit from the terminal mode with Esc
+tnoremap <Esc> <C-\><C-n>
+
+
+""""""""""""""""""""""""""""""
 " => Visual mode related
 """"""""""""""""""""""""""""""
 " Visual mode pressing * or # searches for the current selection
@@ -250,10 +262,6 @@ vnoremap <silent> # :call VisualSelection('b')<CR>
 map j gj
 map k gk
 
-" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space> /
-map <c-space> ?
-
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
@@ -262,25 +270,6 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-
-" Close the current buffer
-map <leader>bd :Bclose<cr>
-
-" Close all the buffers
-map <leader>ba :1,1000 bd!<cr>
-
-" Useful mappings for managing tabs
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove
-
-" Opens a new tab with the current buffer's path
-" Super useful when editing files in the same directory
-map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
-
-" Switch CWD to the directory of the open buffer
-map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 " Specify the behavior when switching between buffers 
 try
@@ -297,6 +286,10 @@ autocmd BufReadPost *
 " Remember info about open buffers on close
 set viminfo^=%
 
+
+" Easymotion custom mappings
+map  <Leader>f <Plug>(easymotion-f)
+map  <Leader>F <Plug>(easymotion-F)
 
 """"""""""""""""""""""""""""""
 " => Status line
@@ -333,6 +326,7 @@ func! DeleteTrailingWS()
   %s/\s\+$//ge
   exe "normal `z"
 endfunc
+autocmd BufWrite *.swift :call DeleteTrailingWS()
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
 autocmd BufWrite *.c :call DeleteTrailingWS()
@@ -439,7 +433,7 @@ set timeout timeoutlen=1500
 " enable mouse support
 set mouse=a
 
-" fzf config
+" fzf configuration
 
 nnoremap <silent> <C-p> :FZF<CR>
 
