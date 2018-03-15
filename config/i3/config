@@ -10,7 +10,7 @@
 #
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 7
+font pango:monospace 10 
 
 # set borders to 1px
 new_window 1pixel
@@ -187,9 +187,10 @@ bar {
 # Please remove the following exec line:
 #######################################################################
 #exec i3-config-wizard
-exec feh --bg-scale /home/daisy/Obrazy/Hackintosh_Wallpaper_v4_by_Jonzy.png
+exec feh --bg-scale /home/marine/Documents/mac_wallpaper.jpg
 exec --no-startup-id nm-applet
 exec --no-startup-id twmnd
+exec --no-startup-id setxkbmap -layout pl
 
 # Hangouts
 for_window [title="Hangouts"] move container to workspace 4

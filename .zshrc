@@ -75,4 +75,8 @@ export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+# Set some snowmix variables
+export SNOWMIX=/usr/lib/Snowmix-0.5.1 snowmix
+export SNOWMIX_PREFIX=.snowmix
+
 export PATH=$PATH:/home/daisy/.gem/ruby/2.4.0/bin/
