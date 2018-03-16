@@ -1,0 +1,1 @@
+awk 'NR>1{print PREV} {PREV=$0} END{printf("%s",$0)}' | xclip -selection clipboard
