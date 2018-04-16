@@ -238,12 +238,36 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
+" toggle neovim terminal buffer like nerdtree plugin
+let g:term_buf = 0
+function! Term_toggle()
+  10wincmd l
+  if g:term_buf == bufnr("")
+    setlocal bufhidden=hide
+    close
+  else
+    botright vnew
+    try
+      exec "buffer ".g:term_buf
+    catch
+      call termopen("zsh", {"detach": 0})
+      let g:term_buf = bufnr("")
+    endtry
+    startinsert!
+  endif
+endfunction
+nnoremap <f4> :call Term_toggle()<cr>
 
 """"""""""""""""""""""""""""""
 " => Terminal mode related
 """"""""""""""""""""""""""""""
 " exit from the terminal mode with Esc
 tnoremap <Esc> <C-\><C-n>
+" exit and hide split with f4
+tnoremap <f4> <C-\><C-n>:call Term_toggle()<cr>
+
+" Prefer Neovim terminal insert mode to normal mode.
+autocmd BufEnter term://* startinsert
 
 
 """"""""""""""""""""""""""""""
