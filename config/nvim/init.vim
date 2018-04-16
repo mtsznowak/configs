@@ -69,11 +69,12 @@ Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
 Plugin 'junegunn/fzf.vim'
 Plugin 'junegunn/fzf'
-Plugin 'mkitt/tabline.vim'
 Plugin 'machakann/vim-highlightedyank'
 Plugin 'prettier/vim-prettier'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'keith/swift.vim'
+Plugin 'itchyny/lightline.vim'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -87,6 +88,9 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Prevent x11-clipboard from changing its content when leaving from the vim
+autocmd VimLeave * call system("xsel -ib", getreg('+'))
+
 " Sets how many lines of history VIM has to remember
 set history=700
 
@@ -178,10 +182,8 @@ map <C-b> :NERDTreeTabsToggle<CR>
 map <C-n> :set invnumber invrelativenumber<CR>
 
 "toggle gitgutter
-"map <C-m> :GitGutterToggle<CR>
+map <C-m> :GitGutterToggle<CR>
 set updatetime=500
-
-map <F2> :!zsh<CR>
 
 "toggle syntastic
 map <C-g> :SyntasticToggleMode<CR>

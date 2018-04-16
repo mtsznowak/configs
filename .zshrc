@@ -10,9 +10,7 @@ ZSH_THEME="robbyrussell"
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias gst="git status "
-alias glg="git log "
 alias pin="ping 8.8.8.8 "
-alias conssh="ssh -p 3022 math@127.0.0.1 "
 alias gc="git commit -am "
 alias kurwa='sudo $(fc -ln -1)'
 alias pls='sudo $(fc -ln -1)'
@@ -62,12 +60,12 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+ # Preferred editor for local and remote sessions
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+ else
+   export EDITOR='vim'
+ fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
