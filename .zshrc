@@ -78,3 +78,4 @@ export SNOWMIX=/usr/lib/Snowmix-0.5.1 snowmix
 export SNOWMIX_PREFIX=.snowmix
 
 export PATH=$PATH:/home/daisy/.gem/ruby/2.4.0/bin/
+export GPG_TTY=$(tty)
