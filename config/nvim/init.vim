@@ -74,6 +74,7 @@ Plugin 'prettier/vim-prettier'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'keith/swift.vim'
 Plugin 'itchyny/lightline.vim'
+Plugin 'powerman/vim-plugin-viewdoc'
 
 
 " All of your Plugins must be added before the following line
@@ -337,8 +338,8 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 map 0 ^
 
 " Move a line of text using SHIFT+[jk]
-nmap J mz:m+<cr>`z
-nmap K mz:m-2<cr>`z
+" nmap J mz:m+<cr>`z
+" nmap K mz:m-2<cr>`z
 vmap J :m'>+<cr>`<my`>mzgv`yo`z
 vmap K :m'<-2<cr>`>my`<mzgv`yo`z
 
