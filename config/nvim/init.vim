@@ -75,6 +75,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'keith/swift.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'powerman/vim-plugin-viewdoc'
+Plugin 'vim-scripts/Tabmerge'
 
 
 " All of your Plugins must be added before the following line
@@ -181,8 +182,8 @@ syntax enable
 " open NERDTree with Ctrl+n
 map <C-b> :NERDTreeTabsToggle<CR>
 
-" toggle line numbers in hybrid mode
-map <C-n> :set invnumber invrelativenumber<CR>
+" toggle line numbers
+map <C-n> :set invnumber<CR>
 
 "toggle gitgutter
 map <C-m> :GitGutterToggle<CR>
@@ -213,6 +214,9 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
+" insert newline without entering insert mode or loosing indentation
+nmap <CR> oa<Esc>x
+nmap <S-Enter> Oa<Esc>x
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
@@ -471,8 +475,9 @@ nnoremap <silent> <leader>p :Ag<cr>
 " describes how to open files from fzf
 command! -nargs=1 CopyPath let @+ = <q-args>
 let g:fzf_action = {
+  \ 'ctrl-o': 'edit',
   \ 'enter': 'tab drop',
-  \ 'ctrl-x': 'split',
+  \ 'ctrl-s': 'split',
   \ 'ctrl-c': 'CopyPath',
   \ 'ctrl-v': 'vsplit' }
 
