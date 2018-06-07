@@ -186,7 +186,7 @@ map <C-b> :NERDTreeTabsToggle<CR>
 map <C-n> :set invnumber<CR>
 
 "toggle gitgutter
-map <C-m> :GitGutterToggle<CR>
+map <leader>m :GitGutterToggle<CR>
 map <leader>hc :pclose<CR>
 set updatetime=500
 
@@ -216,7 +216,6 @@ set ffs=unix,dos,mac
 
 " insert newline without entering insert mode or loosing indentation
 nmap <CR> oa<Esc>x
-nmap <S-Enter> Oa<Esc>x
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
