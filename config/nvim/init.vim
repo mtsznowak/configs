@@ -74,6 +74,7 @@ Plugin 'prettier/vim-prettier'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'keith/swift.vim'
 Plugin 'itchyny/lightline.vim'
+Plugin 'powerman/vim-plugin-viewdoc'
 Plugin 'vim-scripts/Tabmerge'
 
 
@@ -181,11 +182,11 @@ syntax enable
 " open NERDTree with Ctrl+n
 map <C-b> :NERDTreeTabsToggle<CR>
 
-" toggle line numbers in hybrid mode
+" toggle line numbers
 map <C-n> :set invnumber<CR>
 
 "toggle gitgutter
-map <C-m> :GitGutterToggle<CR>
+map <leader>m :GitGutterToggle<CR>
 map <leader>hc :pclose<CR>
 set updatetime=500
 
@@ -215,7 +216,6 @@ set ffs=unix,dos,mac
 
 " insert newline without entering insert mode or loosing indentation
 nmap <CR> oa<Esc>x
-nmap <S-Enter> Oa<Esc>x
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
@@ -341,8 +341,8 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 map 0 ^
 
 " Move a line of text using SHIFT+[jk]
-nmap J mz:m+<cr>`z
-nmap K mz:m-2<cr>`z
+" nmap J mz:m+<cr>`z
+" nmap K mz:m-2<cr>`z
 vmap J :m'>+<cr>`<my`>mzgv`yo`z
 vmap K :m'<-2<cr>`>my`<mzgv`yo`z
 
