@@ -359,6 +359,8 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 autocmd BufWrite *.c :call DeleteTrailingWS()
 autocmd BufWrite *.cpp :call DeleteTrailingWS()
 autocmd BufWrite *.ex :call DeleteTrailingWS()
+autocmd BufWrite *.js :call DeleteTrailingWS()
+autocmd BufWrite *.jsx :call DeleteTrailingWS()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
