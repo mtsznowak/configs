@@ -1,0 +1,5 @@
+[ "$#" -eq 1 ] || die "1 argument required, $# provided"
+
+PKG_NAME=`yaourt -Ss $1 | pick | grep -oP ".*/\K\S*"`
+
+yaourt -S $PKG_NAME
