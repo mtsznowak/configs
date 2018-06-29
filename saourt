@@ -1,5 +1,15 @@
-[ "$#" -eq 1 ] || die "1 argument required, $# provided"
+if [ "$#" -ne 1 ]; then
+    echo "1 argument required, $# provided"
+	exit -1
+fi
 
-PKG_NAME=`yaourt -Ss $1 | pick | grep -oP ".*/\K\S*"`
+PKG_NAME=`yaourt -Ss $1 --color |  awk '{print "   -> " $0}' | pick -S | grep -oP ".*/\K\S*"`
 
-yaourt -S $PKG_NAME
+if [ $PKG_NAME ]; then
+    echo "Installing "$PKG_NAME
+
+    # remove colors from PKG_NAME
+    PKG_NAME=`echo $PKG_NAME | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"`
+    
+    yaourt -S $PKG_NAME
+fi
