@@ -77,5 +77,7 @@ export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/
 export SNOWMIX=/usr/lib/Snowmix-0.5.1 snowmix
 export SNOWMIX_PREFIX=.snowmix
 
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+
 export PATH=$PATH:/home/daisy/.gem/ruby/2.4.0/bin/
 export GPG_TTY=$(tty)
