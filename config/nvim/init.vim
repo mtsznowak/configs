@@ -181,6 +181,7 @@ syntax enable
 
 " open NERDTree with Ctrl+n
 map <C-b> :NERDTreeTabsToggle<CR>
+map <leader>nf :NERDTreeFind<CR>
 
 " toggle line numbers
 map <C-n> :set invnumber<CR>
