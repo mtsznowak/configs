@@ -248,6 +248,7 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
+nmap <leader>to :tabonly<CR>
 " toggle neovim terminal buffer like nerdtree plugin
 let g:term_buf = 0
 function! Term_toggle()
