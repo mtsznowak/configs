@@ -76,6 +76,8 @@ Plugin 'keith/swift.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'powerman/vim-plugin-viewdoc'
 Plugin 'vim-scripts/Tabmerge'
+Plugin 'Chiel92/vim-autoformat'
+
 
 
 " All of your Plugins must be added before the following line
@@ -382,7 +384,7 @@ map <leader>s? z=
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+" noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " Quickly open a buffer for scripbble
 map <leader>q :e ~/buffer<cr>
@@ -502,3 +504,14 @@ set statusline+=%*
 
 " Prettier config [JS]
 source ~/.config/nvim/prettier.vim
+
+" Formatter
+nnoremap <leader>f :Autoformat<CR>
+vnoremap <leader>f :Autoformat<CR>
+
+" Gitdiff
+nnoremap <leader>dr :diffg RE<CR>
+nnoremap <leader>db :diffg BA<CR>
+nnoremap <leader>dl :diffg LO<CR>
+nnoremap <leader>du :diffupdate<CR>
+
