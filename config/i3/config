@@ -51,6 +51,10 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
+# move whole workspace to other output 
+bindsym Mod4+l move workspace to output right
+bindsym Mod4+h move workspace to output left
+
 # move focused window
 bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
@@ -136,7 +140,7 @@ hide_edge_borders smart
 # Automatically put workspaces on specific screens
 workspace 1 output DP1-2
 workspace 2 output HDMI1
-workspace 3 output eDP1
+workspace 5 output eDP1
 
 bindsym $mod+semicolon exec i3-msg border pixel 3
 bindsym --release $mod+semicolon exec i3-msg border pixel 1
@@ -210,6 +214,7 @@ exec --no-startup-id setxkbmap -layout pl
 # Hangouts
 for_window [title="Hangouts"] move container to workspace 4
 for_window [title="Hangouts"] floating enabled
+for_window [title="Slack"] move container to workspace 4
 for_window[title="extcalc"] floating enabled
 
 # Pulse Audio controls
