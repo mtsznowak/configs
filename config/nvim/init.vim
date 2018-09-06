@@ -77,7 +77,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'powerman/vim-plugin-viewdoc'
 Plugin 'vim-scripts/Tabmerge'
 Plugin 'Chiel92/vim-autoformat'
-
+Plugin 'majutsushi/tagbar'
 
 
 " All of your Plugins must be added before the following line
@@ -498,6 +498,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_mode_map = { 'mode': 'passive' }
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -510,8 +511,11 @@ nnoremap <leader>f :Autoformat<CR>
 vnoremap <leader>f :Autoformat<CR>
 
 " Gitdiff
-nnoremap <leader>dr :diffg RE<CR>
-nnoremap <leader>db :diffg BA<CR>
-nnoremap <leader>dl :diffg LO<CR>
+nnoremap <leader>dr :diffg RE<CR>:diffupdate<CR>
+nnoremap <leader>db :diffg BA<CR>:diffupdate<CR>
+nnoremap <leader>dl :diffg LO<CR>:diffupdate<CR>
 nnoremap <leader>du :diffupdate<CR>
 
+
+" Tagbar
+nmap <F8> :TagbarToggle<CR>
