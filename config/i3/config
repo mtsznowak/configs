@@ -134,7 +134,7 @@ bindsym $mod+shift+i exec imgur-screenshot
 
 
 # set borders to 1px
-default_border pixel 1
+default_border pixel 2px
 hide_edge_borders smart
 
 # Automatically put workspaces on specific screens

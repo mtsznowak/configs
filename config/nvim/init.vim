@@ -276,6 +276,9 @@ nnoremap <f4> :call Term_toggle()<cr>
 """"""""""""""""""""""""""""""
 " exit from the terminal mode with Esc
 tnoremap <Esc> <C-\><C-n>
+tnoremap <C-h> <C-\><C-n><C-W>h
+tnoremap <C-l> <C-\><C-n><C-W>l
+
 " exit and hide split with f4
 tnoremap <f4> <C-\><C-n>:call Term_toggle()<cr>
 
