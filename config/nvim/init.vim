@@ -58,10 +58,11 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'elixir-editors/vim-elixir'
 Plugin 'tpope/vim-sleuth'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'vim-scripts/Ambient-Color-Scheme'
 Plugin 'slashmili/alchemist.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'milkypostman/vim-togglelist'
@@ -78,6 +79,8 @@ Plugin 'powerman/vim-plugin-viewdoc'
 Plugin 'vim-scripts/Tabmerge'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'majutsushi/tagbar'
+Plugin 'rhysd/vim-grammarous'
+Plugin 'Shougo/deoplete.nvim'
 
 
 " All of your Plugins must be added before the following line
@@ -277,7 +280,6 @@ nnoremap <f4> :call Term_toggle()<cr>
 " exit from the terminal mode with Esc
 tnoremap <Esc> <C-\><C-n>
 tnoremap <C-h> <C-\><C-n><C-W>h
-tnoremap <C-l> <C-\><C-n><C-W>l
 
 " exit and hide split with f4
 tnoremap <f4> <C-\><C-n>:call Term_toggle()<cr>
@@ -377,8 +379,6 @@ autocmd BufWrite *.jsx :call DeleteTrailingWS()
 map <leader>ss :setlocal spell!<cr>
 
 " Shortcuts using <leader>
-map <leader>sn ]s
-map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
 
@@ -519,6 +519,8 @@ nnoremap <leader>db :diffg BA<CR>:diffupdate<CR>
 nnoremap <leader>dl :diffg LO<CR>:diffupdate<CR>
 nnoremap <leader>du :diffupdate<CR>
 
+" deoplete
+let g:deoplete#enable_at_startup = 1 
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
