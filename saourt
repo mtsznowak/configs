@@ -3,7 +3,7 @@ if [ "$#" -ne 1 ]; then
 	exit -1
 fi
 
-PKG_NAME=`yaourt -Ss $1 --color | sed '$!N;s/\n/\t/' | awk '{print "   -> " $0}' | pick -S | grep -oP ".*/\K\S*"`
+PKG_NAME=`yaourt -Ss $1 | perl -p00e 's/\n    /!/g' | column -t -s! -E1,2 | pick -S | grep -oP ".*/\K\S*"`
 
 if [ $PKG_NAME ]; then
     echo "Installing "$PKG_NAME

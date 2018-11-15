@@ -81,7 +81,7 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'majutsushi/tagbar'
 Plugin 'rhysd/vim-grammarous'
 Plugin 'Shougo/deoplete.nvim'
-
+Plugin 'zchee/deoplete-clang'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -521,6 +521,9 @@ nnoremap <leader>du :diffupdate<CR>
 
 " deoplete
 let g:deoplete#enable_at_startup = 1 
+let g:deoplete#sources#clang#clang_path = '/usr/lib/libclang.so'
+let g:deoplete#sources#clang#clang_header = '/lib/clang/7.0.0/include'
+
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>

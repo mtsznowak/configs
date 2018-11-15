@@ -178,7 +178,7 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
+bindsym $mod+t exec setxkbmap -layout pl
 bindsym $mod+Escape exec i3lock -c 000000
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -246,7 +246,7 @@ bindsym XF86Calculator exec extcalc
 bindsym $mod+Shift+s exec --no-startup-id /home/daisy/.i3/monitormode.sh
 
 #f.lux
-exec --no-startup-id xflux -l 50.064650 -g 19.944980 
+exec --no-startup-id xflux -l 50.064650 -g 19.944980 -k 4200
 
 
 #touchpad

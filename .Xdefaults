@@ -3,7 +3,8 @@ URxvt.font:             xft:Inconsolata:size=12.5:antialias=true:hinting=true
 URxvt.termName:         rxvt
 URxvt.background:       #000000
 URxvt.foreground:       #cccccc
-URxvt.scrollBar:        false
+URxvt*scrollBar_right:  true
+URxvt*scrollstyle:      rxvt
 URxvt.perl-lib:         /usr/lib/urxvt/perl/
 URxvt.perl-ext-common:  default,matcher,resize-font,selection-to-clipboard,searchable-scrollback
 URxvt.url-launcher:     /usr/bin/xdg-open
@@ -18,7 +19,7 @@ URxvt.transparent:   true
 URxvt.tintColor:     white
 URxvt.shading:       30 
  
-URxvt.color0:      #000000
+URxvt.color0:      #1c1c1c
 URxvt.color1:      #9e1828
 URxvt.color2:      #aece92
 URxvt.color3:      #968a38
