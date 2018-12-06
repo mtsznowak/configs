@@ -18,6 +18,7 @@ alias diffd='git difftool -d '
 alias diffs='git diff --word-diff=color '
 alias gitree='git log --graph --oneline --all'
 alias gs='git status'
+alias spawn='i3-sensible-terminal &!'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -53,7 +54,7 @@ alias gs='git status'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git, extract)
+plugins=(git, extract, autojump)
 
 source $ZSH/oh-my-zsh.sh
 source /usr/share/fzf/key-bindings.zsh
