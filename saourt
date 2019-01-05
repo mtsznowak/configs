@@ -3,7 +3,7 @@ if [ "$#" -ne 1 ]; then
 	exit -1
 fi
 
-PKG_NAME=`yay -Ss $1 | perl -p00e 's/\n    /!/g' | tac | column -t -s! -E1,2 | pick -S | grep -oP ".*/\K\S*"`
+PKG_NAME=`yay -Ss $1 | perl -p00e 's/\n    /!/g' | tac | column -t -s! -E1,2 | pick | grep -oP ".*/\K\S*"`
 
 if [ $PKG_NAME ]; then
     echo "Installing "$PKG_NAME

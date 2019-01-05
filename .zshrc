@@ -54,7 +54,7 @@ alias spawn='i3-sensible-terminal &!'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git, extract, autojump)
+plugins=(git extract autojump)
 
 source $ZSH/oh-my-zsh.sh
 source /usr/share/fzf/key-bindings.zsh
@@ -86,4 +86,3 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=0
 
 export PATH=$PATH:/home/daisy/.gem/ruby/2.4.0/bin/
 export GPG_TTY=$(tty)
-source /usr/share/nvm/init-nvm.sh
