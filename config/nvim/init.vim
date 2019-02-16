@@ -184,9 +184,11 @@ set tm=500
 " Enable syntax highlighting
 syntax enable
 
-" open NERDTree with Ctrl+n
+" open NERDTree with Ctrl+b
 map <C-b> :NERDTreeTabsToggle<CR>
 map <leader>nf :NERDTreeFind<CR>
+let NERDTreeIgnore=['\.o$', '\.so$','\~$']
+
 
 " toggle line numbers
 map <C-n> :set invnumber<CR>
