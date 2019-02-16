@@ -16,7 +16,7 @@ let g:prettier#config#semi = 'true'
 
 " single quotes over double quotes
 " Prettier default: false
-let g:prettier#config#single_quote = 'false'
+let g:prettier#config#single_quote = 'true'
 
 " print spaces between brackets
 " Prettier default: true
@@ -32,7 +32,7 @@ let g:prettier#config#arrow_parens = 'avoid'
 
 " none|es5|all
 " Prettier default: none
-let g:prettier#config#trailing_comma = 'none'
+let g:prettier#config#trailing_comma = 'es5'
 
 " flow|babylon|typescript|css|less|scss|json|graphql|markdown
 " Prettier default: babylon

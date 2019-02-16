@@ -112,9 +112,6 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
-# set focus to specific window using i3-easyfocus
-bindsym $mod+apostrophe exec i3-easyfocus -a
-
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
@@ -131,6 +128,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+shift+g exec screen_capture.sh gif
 bindsym $mod+shift+m exec screen_capture.sh mp4
 bindsym $mod+shift+i exec imgur-screenshot
+bindsym --release $mod+shift+u exec scrot 'last_region.png' -e 'mv $f /tmp/' -s && xclip -selection clipboard -t image/png -i /tmp/last_region.png && twmnc -t Scrot -c 'Screenshot created successfully' -d 1000
 
 
 # set borders to 1px
@@ -193,7 +191,6 @@ bar {
       inactive_workspace #333333 #333333 #afafaf
       urgent_workspace #900000 #900000 #afafaf
   }
-#status_command i3status
 }
 
 #######################################################################

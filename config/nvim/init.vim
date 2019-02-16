@@ -82,6 +82,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'rhysd/vim-grammarous'
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'zchee/deoplete-clang'
+Plugin 'bfrg/vim-cpp-modern'
+Plugin 'hashivim/vim-terraform'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

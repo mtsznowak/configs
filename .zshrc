@@ -18,7 +18,6 @@ alias diffd='git difftool -d '
 alias diffs='git diff --word-diff=color '
 alias gitree='git log --graph --oneline --all'
 alias gs='git status'
-alias spawn='i3-sensible-terminal &!'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"

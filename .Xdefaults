@@ -3,13 +3,15 @@ URxvt.font:             xft:Inconsolata:size=12.5:antialias=true:hinting=true
 URxvt.termName:         rxvt
 URxvt.background:       #000000
 URxvt.foreground:       #cccccc
+URxvt.scrollBar:        false
 URxvt*scrollBar_right:  true
 URxvt*scrollstyle:      rxvt
 URxvt.perl-lib:         /usr/lib/urxvt/perl/
-URxvt.perl-ext-common:  default,matcher,resize-font,selection-to-clipboard,searchable-scrollback
+URxvt.perl-ext-common:  default,matcher,resize-font,selection-to-clipboard,searchable-scrollback,new-window
 URxvt.url-launcher:     /usr/bin/xdg-open
 URxvt.matcher.button:   1
 URxvt.matcher.rend.0:   Uline Bold fg5
+URxvt*saveLines:        12000
 
 URxvt.fading:           25
 URxvt.fadeColor:        #000000
@@ -42,3 +44,5 @@ URxvt.keysym.Control-Right:  \033[1;5C
 
 URxvt.keysym.Control-Up: command:\033]720;1\007
 URxvt.keysym.Control-Down: command:\033]721;1\007
+
+URxvt.keysym.A-N: perl:new-window
