@@ -1,0 +1,4 @@
+LAUNCHER="rofi -theme "android_notification" -width 30 -dmenu -i -p power-option:"
+USE_LOCKER="true"
+LOCKER="i3lock -c 000000"
+
