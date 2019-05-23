@@ -30,7 +30,6 @@
 "    -> Text, tab and indent related
 "    -> Visual mode related
 "    -> Moving around, tabs and buffers
-"    -> Status line
 "    -> Editing mappings
 "    -> vimgrep searching and cope displaying
 "    -> Spell checking
@@ -58,7 +57,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'elixir-editors/vim-elixir'
 Plugin 'tpope/vim-sleuth'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'vim-scripts/Ambient-Color-Scheme'
 Plugin 'slashmili/alchemist.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
@@ -73,24 +71,18 @@ Plugin 'junegunn/fzf'
 Plugin 'machakann/vim-highlightedyank'
 Plugin 'prettier/vim-prettier'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'keith/swift.vim'
 Plugin 'itchyny/lightline.vim'
-Plugin 'powerman/vim-plugin-viewdoc'
 Plugin 'vim-scripts/Tabmerge'
 Plugin 'Chiel92/vim-autoformat'
-Plugin 'majutsushi/tagbar'
 Plugin 'rhysd/vim-grammarous'
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'zchee/deoplete-clang'
-Plugin 'bfrg/vim-cpp-modern'
-Plugin 'hashivim/vim-terraform'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'tpope/vim-obsession'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-
-
-
 
 
 
@@ -207,17 +199,6 @@ noremap <leader>g :SyntasticReset<CR>
 "search for visually selected text
 vnoremap // y/<C-R>"<CR>
 
-colorscheme ambient
-set background=dark
-
-" Set extra options when running in GUI mode
-if has("gui_running")
-    set guioptions-=T
-    set guioptions+=e
-    set t_Co=256
-    set guitablabel=%M\ %t
-endif
-
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
 
@@ -278,6 +259,17 @@ function! Term_toggle()
 endfunction
 nnoremap <f4> :call Term_toggle()<cr>
 
+function! Term_close()
+  10wincmd l
+  if g:term_buf == bufnr("")
+    setlocal bufhidden=hide
+    close
+  endif
+endfunction
+
+" automatically resize split windows when host window is resized
+autocmd VimResized * wincmd =
+
 """"""""""""""""""""""""""""""
 " => Terminal mode related
 """"""""""""""""""""""""""""""
@@ -337,16 +329,6 @@ set viminfo^=%
 map  f <Plug>(easymotion-f)
 map  F <Plug>(easymotion-F)
 
-""""""""""""""""""""""""""""""
-" => Status line
-""""""""""""""""""""""""""""""
-" Always show the status line
-set laststatus=2
-
-" Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -372,6 +354,7 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 autocmd BufWrite *.c :call DeleteTrailingWS()
 autocmd BufWrite *.cpp :call DeleteTrailingWS()
 autocmd BufWrite *.ex :call DeleteTrailingWS()
+autocmd BufWrite *.cu :call DeleteTrailingWS()
 autocmd BufWrite *.js :call DeleteTrailingWS()
 autocmd BufWrite *.jsx :call DeleteTrailingWS()
 
@@ -506,6 +489,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers=['eslint']
 let g:syntastic_mode_map = { 'mode': 'passive' }
+let g:syntastic_cuda_nvcc_args = '-std=c++11'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -526,8 +510,10 @@ nnoremap <leader>du :diffupdate<CR>
 " deoplete
 let g:deoplete#enable_at_startup = 1 
 let g:deoplete#sources#clang#clang_path = '/usr/lib/libclang.so'
-let g:deoplete#sources#clang#clang_header = '/lib/clang/7.0.0/include'
+let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
+let g:deoplete#sources#clang#clang_header = '/lib/clang/8.0.0/include'
+set completeopt-=preview
 
-
-" Tagbar
-nmap <F8> :TagbarToggle<CR>
+" snippets
+nnoremap <leader>scmain :-1read $HOME/.config/nvim/cmain.snippet<CR>o
+nnoremap <leader>plug oPlugin ''<Esc>h
