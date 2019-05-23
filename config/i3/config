@@ -202,6 +202,7 @@ exec feh --randomize --bg-scale ~/Obrazy/wallpapers/*
 exec --no-startup-id nm-applet
 exec --no-startup-id twmnd
 exec --no-startup-id setxkbmap -layout pl
+exec --no-startup-id compton
 
 # Hangouts
 for_window [title="Hangouts"] move container to workspace 4
@@ -245,7 +246,7 @@ exec --no-startup-id xflux -l 50.064650 -g 19.944980 -k 4200
 
 
 #idea mode
-bindsym $mod+o mode "mode_idea"
+bindsym $mod+shift+o mode "mode_idea"
 
 mode "mode_idea" {
   bindsym Mod4+o mode "default"

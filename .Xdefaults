@@ -1,8 +1,6 @@
 URxvt.xftAntialias:     true
 URxvt.font:             xft:Inconsolata:size=12.5:antialias=true:hinting=true 
 URxvt.termName:         rxvt
-URxvt.background:       #000000
-URxvt.foreground:       #cccccc
 URxvt.scrollBar:        false
 URxvt*scrollBar_right:  true
 URxvt*scrollstyle:      rxvt
@@ -12,37 +10,32 @@ URxvt.url-launcher:     /usr/bin/xdg-open
 URxvt.matcher.button:   1
 URxvt.matcher.rend.0:   Uline Bold fg5
 URxvt*saveLines:        12000
-
-URxvt.fading:           25
-URxvt.fadeColor:        #000000
-
-URxvt.background:    rgba:0000/0000/0000/cccc
-URxvt.transparent:   true
-URxvt.tintColor:     white
-URxvt.shading:       30 
+URxvt.tintColor:        white
  
-URxvt.color0:      #1c1c1c
-URxvt.color1:      #9e1828
-URxvt.color2:      #aece92
-URxvt.color3:      #968a38
-URxvt.color4:      #414171
-URxvt.color5:      #963c59
-URxvt.color6:      #418179
-URxvt.color7:      #bebebe
-URxvt.color8:      #666666
-URxvt.color9:      #cf6171
-URxvt.color10:     #c5f779
-URxvt.color11:     #fff796
-URxvt.color12:     #4186be
-URxvt.color13:     #cf9ebe
-URxvt.color14:     #71bebe
-URxvt.color15:     #ffffff
-
-
 URxvt.keysym.Control-Left:   \033[1;5D
 URxvt.keysym.Control-Right:  \033[1;5C
+URxvt.keysym.Control-Up:    command:\033]720;1\007
+URxvt.keysym.Control-Down:  command:\033]721;1\007
 
-URxvt.keysym.Control-Up: command:\033]720;1\007
-URxvt.keysym.Control-Down: command:\033]721;1\007
+URxvt.keysym.A-N:   perl:new-window
 
-URxvt.keysym.A-N: perl:new-window
+*background:   [97]#282a36
+*foreground:   #eff0eb
+*cursorColor:  #9aedfe
+
+*color0:      #33303b
+*color8:      #4f4b58
+*color1:      #ff5c57
+*color9:      #ff5c57
+*color2:      #5af78e
+*color10:     #5af78e
+*color3:      #f3f99d
+*color11:     #f3f99d
+*color4:      #57c7ff
+*color12:     #57c7ff
+*color5:      #ff6ac1
+*color13:     #ff6ac1
+*color6:      #9aedfe
+*color14:     #9aedfe
+*color7:      #eff0eb
+*color15:     #eff0eb

@@ -18,6 +18,7 @@ alias diffd='git difftool -d '
 alias diffs='git diff --word-diff=color '
 alias gitree='git log --graph --oneline --all'
 alias gs='git status'
+alias tmux="TERM=screen-256color-bce tmux"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -53,7 +54,7 @@ alias gs='git status'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git extract autojump)
+plugins=(git extract autojump command-time)
 
 source $ZSH/oh-my-zsh.sh
 source /usr/share/fzf/key-bindings.zsh
@@ -76,6 +77,8 @@ export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+export TERM=rxvt
 
 # Set some snowmix variables
 export SNOWMIX=/usr/lib/Snowmix-0.5.1 snowmix
