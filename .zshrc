@@ -18,7 +18,7 @@ alias diffd='git difftool -d '
 alias diffs='git diff --word-diff=color '
 alias gitree='git log --graph --oneline --all'
 alias gs='git status'
-alias tmux="TERM=screen-256color-bce tmux"
+alias tmux="TERM=rxvt-256color tmux"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
