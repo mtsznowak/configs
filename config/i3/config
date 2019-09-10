@@ -171,7 +171,7 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-bindsym $mod+t exec setxkbmap -layout pl
+bindsym $mod+t exec setxkbmap -layout pl -option caps:swapescape
 bindsym $mod+Escape exec i3lock -c 000000
 
 # Start i3bar to display a workspace bar (plus the system information i3status
