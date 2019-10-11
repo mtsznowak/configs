@@ -86,5 +86,8 @@ export SNOWMIX_PREFIX=.snowmix
 
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 
+# set default pager for bat
+export BAT_PAGER="less -F"
+
 export PATH=$PATH:/home/daisy/.gem/ruby/2.4.0/bin/
 export GPG_TTY=$(tty)
